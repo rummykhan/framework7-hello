@@ -10,7 +10,7 @@
         path = require('path'),
         uglify = require('gulp-uglify'),
         sourcemaps = require('gulp-sourcemaps'),
-        minifyCSS = require('gulp-minify-css'),
+        minifyCSS = require('gulp-minify-icons'),
         tap = require('gulp-tap'),
         concat = require('gulp-concat'),
         jshint = require('gulp-jshint'),
@@ -20,29 +20,29 @@
             root: './',
             build: {
                 root: 'build/',
-                styles: 'build/css/',
+                styles: 'build/icons/',
                 scripts: 'build/js/'
             },
             custom: {
                 root: 'custom/',
-                styles: 'custom/css/',
+                styles: 'custom/icons/',
                 scripts: 'custom/js/',
             },
             dist: {
                 root: 'dist/',
-                styles: 'dist/css/',
+                styles: 'dist/icons/',
                 scripts: 'dist/js/'
             },
             ks: {
                 ios : {
                     root: 'kitchen-sink-ios/',
-                    css: 'kitchen-sink-ios/css/',
+                    css: 'kitchen-sink-ios/icons/',
                     jade: 'kitchen-sink-ios/jade/*.jade',
                     less: 'kitchen-sink-ios/less/*.less',
                 },
                 material : {
                     root: 'kitchen-sink-material/',
-                    css: 'kitchen-sink-material/css/',
+                    css: 'kitchen-sink-material/icons/',
                     jade: 'kitchen-sink-material/jade/*.jade',
                     less: 'kitchen-sink-material/less/*.less',
                 }
@@ -339,7 +339,7 @@
                 .pipe(less({
                     paths: [ path.join(__dirname, 'less', 'includes') ]
                 }))
-                .pipe(gulp.dest(exampleRoot + 'css/'))
+                .pipe(gulp.dest(exampleRoot + 'icons/'))
                 .pipe(connect.reload());
         }
         cb();

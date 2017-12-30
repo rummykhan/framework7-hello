@@ -10,47 +10,102 @@
     <meta name="theme-color" content="#2196f3">
     <!-- Your app title -->
     <title>My App</title>
+
     <!-- Path to Framework7 Library CSS, Material Theme -->
     <link rel="stylesheet" href="css/framework7.material.min.css">
+
     <!-- Path to Framework7 color related styles, Material Theme -->
     <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+
+    <!-- Framework7 Icons -->
+    <link rel="stylesheet" href="css/icons/framework7-icons.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+    <!-- my-app.icons -->
+    <link rel="stylesheet" href="css/my-app.css">
 </head>
 <body>
+<!-- Panel overlay for both right and left -->
+<div class="panel-overlay"></div>
+
+<div class="panel panel-right panel-cover">
+    <div class="content-block">
+        <p>Right Panel content here</p>
+        <!-- Click on link with "close-panel" class will close panel -->
+        <p><a href="#" class="close-panel">Close me</a></p>
+        <!-- Click on link with "open-panel" and data-panel="left" attribute will open Left panel -->
+        <p><a href="#" data-panel="left" class="open-panel">Open Left Panel</a></p>
+    </div>
+</div>
+
 <!-- Views -->
 <div class="views">
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main">
+
+        <!-- Top Navbar. In Material theme it should be inside of the page-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="link icon-only back">
+                        <i class="icon icon-back"></i>
+                    </a>
+                </div>
+                <div class="center">
+                    <i class="f7-icons">social_github</i>
+                </div>
+                <div class="right">
+                    <a href="#" class="link icon-only open-panel" data-panel="right">
+                        <i class="icon icon-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-fixed">
+        <div class="pages navbar-through">
             <!-- Page, "data-page" contains page name -->
             <div data-page="index" class="page">
 
-                <!-- Top Navbar. In Material theme it should be inside of the page-->
-                <div class="navbar">
-                    <div class="navbar-inner">
-                        <div class="center">Github Explore</div>
-                    </div>
-                </div>
-
                 <!-- Scrollable page content -->
                 <div class="page-content">
-                    <div class="content-block-title">Users</div>
+
                     <div class="list-block media-list">
                         <ul class="users-list">
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+
 <!-- Path to jQuery-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+
+<!-- Moment JS -->
+<script type="text/javascript" src="js/plugins/moment/moment.min.js"></script>
+
 <!-- Path to Framework7 Library JS-->
-<script type="text/javascript" src="js/framework7.js"></script>
+<script type="text/javascript" src="js/plugins/framework7/framework7.js"></script>
+
+<!-- Bootstrap CDN -->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+<!-- Underscore string -->
+<script src="js/plugins/underscore.string/underscore.string.min.js"></script>
+
 <script type="text/javascript" src="js/values.js"></script>
-<script type="text/javascript" src="js/users.js"></script>
-<script type="text/javascript" src="js/user.js"></script>
+<script type="text/javascript" src="js/data/users.js"></script>
+<script type="text/javascript" src="js/data/user.js"></script>
+<script type="text/javascript" src="js/data/repos.js"></script>
+<script type="text/javascript" src="js/data/gists.js"></script>
+<script type="text/javascript" src="js/data/followers.js"></script>
+<script type="text/javascript" src="js/data/following.js"></script>
+
 <!-- Path to your app js-->
 <script type="text/javascript" src="js/my-app.js"></script>
 </body>
